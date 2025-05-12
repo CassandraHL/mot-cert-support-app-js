@@ -8,6 +8,7 @@ describe("My Login application", () => {
         await $('input[name="password"]').setValue('password123')
         await $('button').click()
 
+        await browser.pause(2000)
         const element = await $('.card-title')
         await expect(element).toHaveText('Projects')
 	});
