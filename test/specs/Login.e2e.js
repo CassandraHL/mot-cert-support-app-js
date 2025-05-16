@@ -10,6 +10,13 @@ describe("My Login application", () => {
         await $('button').click()
 
         await browser.pause(2000)
+        await browser.waitUntil(
+            async () => (await browser.getUrl()) === 'http://localhost:3000/#/projects',
+                {
+                    timeout: 60000,
+                    timeoutMsg: 'Timeout reached after 60 seconds; URL did not change to http://localhost:3000/#/projects'
+                }
+        );
         console.log(browser.getUrl())
         const element = await $('.card-title')
         await expect(element).toHaveText('Projects')
