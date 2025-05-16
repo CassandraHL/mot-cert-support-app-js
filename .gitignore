@@ -5,3 +5,4 @@ reports
 *.xml
 allure-*
 test_reports
+screenshots

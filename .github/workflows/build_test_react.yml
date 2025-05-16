@@ -25,6 +25,12 @@ jobs:
          npm start &
          curl --head -X GET --retry 60 --retry-connrefused --retry-delay 1 http://localhost:3000
          npx wdio run ./wdio.conf.js
+     - name: Upload screenshots
+       if: always()
+       uses: actions/upload-artifact@v3
+       with:
+         name: screenshots
+         path: screenshots/
      - name: Build production artifacts
        run: |
          npm run build --if-present
