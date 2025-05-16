@@ -25,11 +25,6 @@ jobs:
          npm start &
          curl --head -X GET --retry 60 --retry-connrefused --retry-delay 1 http://localhost:3000
          npx wdio run ./wdio.conf.js
-     - name: Ensure screenshots folder exists
-       run: |
-         if (-Not (Test-Path "test/specs/screenshots")) {
-         New-Item -ItemType Directory -Path "test/specs/screenshots"
-         }
      - name: Zip screenshots
        if: always()
        run: |
