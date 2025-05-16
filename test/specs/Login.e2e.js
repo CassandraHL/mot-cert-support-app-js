@@ -6,7 +6,7 @@ describe("My Login application", () => {
         
         await $('input[name="email"]').setValue('admin@test.com')
         await $('input[name="password"]').setValue('password123')
-        console.log(browser.getUrl())
+        console.log(await browser.getUrl())
         await $('button').click()
 
         await browser.pause(2000)
@@ -17,7 +17,7 @@ describe("My Login application", () => {
                     timeoutMsg: 'Timeout reached after 60 seconds; URL did not change to http://localhost:3000/#/projects'
                 }
         );
-        console.log(browser.getUrl())
+        console.log(await browser.getUrl())
         const element = await $('.card-title')
         await expect(element).toHaveText('Projects')
 	});
