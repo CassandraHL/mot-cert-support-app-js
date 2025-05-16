@@ -27,7 +27,7 @@ jobs:
          npx wdio run ./wdio.conf.js
      - name: Upload screenshots
        if: always()
-       uses: actions/upload-artifact@v3.1.3
+       uses: actions/upload-artifact@v2
        with:
          name: screenshots
          path: test/specs/screenshots/
