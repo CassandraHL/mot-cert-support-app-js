@@ -6,9 +6,11 @@ describe("My Login application", () => {
         
         await $('input[name="email"]').setValue('admin@test.com')
         await $('input[name="password"]').setValue('password123')
+        console.log(browser.getUrl())
         await $('button').click()
 
-        await browser.pause(15000)
+        await browser.pause(2000)
+        console.log(browser.getUrl())
         const element = await $('.card-title')
         await expect(element).toHaveText('Projects')
 	});
