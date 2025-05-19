@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
  build:
-   runs-on: windows-latest
+   runs-on: ubuntu-latest
    strategy:
      matrix:
        node-version: [18.x]
@@ -25,11 +25,6 @@ jobs:
          npm start &
          curl --head -X GET --retry 60 --retry-connrefused --retry-delay 1 http://localhost:3000
          npx wdio run ./wdio.conf.js
-     - name: Zip screenshots
-       if: always()
-       run: |
-         mkdir -p artifacts
-         powershell Compress-Archive -Path test/specs/screenshots/* -DestinationPath artifacts/screenshots.zip
      - name: Build production artifacts
        run: |
          npm run build --if-present

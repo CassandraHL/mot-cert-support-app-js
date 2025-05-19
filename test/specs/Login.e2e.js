@@ -6,9 +6,7 @@ describe("My Login application", () => {
         
         await $('input[name="email"]').setValue('admin@test.com')
         await $('input[name="password"]').setValue('password123')
-        await browser.saveScreenshot('test/specs/screenshots/before-click.png');
         await $('button').click()
-        await browser.saveScreenshot('test/specs/screenshots/after-click.png');
 
         await browser.waitUntil(
             async () => (await browser.getUrl()) === 'http://localhost:3000/#/projects',
