@@ -1,6 +1,6 @@
 const { expect, browser, $ } = require('@wdio/globals')
 
-describe('My Login application', () => {
+describe('My Login application - Heroku App', () => {
     it('should login with valid credentials', async () => {
         await browser.url(`https://the-internet.herokuapp.com/login`)
 

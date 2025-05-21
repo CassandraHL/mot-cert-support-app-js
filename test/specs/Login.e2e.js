@@ -1,6 +1,6 @@
 const { expect, browser, $ } = require("@wdio/globals");
 
-describe("My Login application", () => {
+describe("My Login application - Timesheet Manager", () => {
 	it("should login with valid credentials", async () => {
 		await browser.url(`http://localhost:3000/#/login`);
         
