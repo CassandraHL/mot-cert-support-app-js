@@ -3,6 +3,16 @@ This provides the frontend for the Timesheet manager support app for the Automat
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Getting Started
+
+### Installing Dependencies
+
+Before running the checks for the first time, you'll have to install project dependencies using
+
+```
+npm install
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -29,3 +39,17 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run wdio`
+
+Runs end-to-end tests according to [wdio.conf.js](wdio.conf.js)
+
+If you just want to run a specific test file, you can use something like
+
+```
+npx wdio run ./wdio.conf.js --spec login.e2e.js
+```
+
+## CI/CD Integration
+
+The project is integrated with GitHub actions.  The build and test process is triggered with every push to main.  Pipeline configuration can be found in [.github/workflows/build_test_react.yml](.github/workflows/build_test_react.yml)

@@ -31,11 +31,6 @@ jobs:
      - name: List test reports
        run: |
             ls -lh reports/e2e-report
-            for f in reports/e2e-report/*.xml; do
-              echo "::group::$f"
-              cat "$f"
-              echo "::endgroup::"
-            done
      - name: Publish Test Results
        uses: EnricoMi/publish-unit-test-result-action/composite@v2
        if: always()
