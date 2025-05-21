@@ -43,7 +43,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 1,
+    maxInstances: 10,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -126,10 +126,10 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: [['junit',{
+    reporters: [['junit', {
         outputDir: './reports/e2e-report/',
         outputFileFormat: function(options) {
-            return 'junit-report.xml'
+            return `junit-${options.cid}.xml`;
         }
     }]],
 
